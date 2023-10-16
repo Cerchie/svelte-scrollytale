@@ -2,11 +2,12 @@
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 	let value;
 </script>
-
+	<!--put array of els here-->
 <section id="scrolly">
 	<h2>Scrolly <span>{value}</span></h2>
 	<div class="spacer" />
 	<Scrolly bind:value>
+
 		{#each [0, 1, 2, 3, 4] as text, i}
 			{@const active = value === i}
 			<div class="step" class:active>
