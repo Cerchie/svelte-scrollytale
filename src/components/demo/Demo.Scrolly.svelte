@@ -1,17 +1,32 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
+	import DemoSelect from "$components/demo/Demo.Select.svelte";
+	import DemoSlider from "$components/demo/Demo.Slider.svelte";
+	import DemoButtonSet from "$components/demo/Demo.ButtonSet.svelte";
+
 	let value;
+
 </script>
-	<!--put array of els here-->
+
 <section id="scrolly">
-	<h2>Scrolly <span>{value}</span></h2>
+
+	<h2>Scrolly <span>{value ? value : "ScrollyTitle" }</span></h2>
 	<div class="spacer" />
 	<Scrolly bind:value>
 
-		{#each [0, 1, 2, 3, 4] as text, i}
+		{#each [0,1,2] as text, i}
 			{@const active = value === i}
 			<div class="step" class:active>
-				<p>{text}</p>
+			        {#if i == 0}
+                        <DemoSelect/>
+                    {/if}
+					{#if i == 1}
+                        <DemoSlider/>
+	
+                    {/if}
+					{#if i == 2}
+                        <DemoButtonSet/>
+                    {/if}
 			</div>
 		{/each}
 	</Scrolly>
