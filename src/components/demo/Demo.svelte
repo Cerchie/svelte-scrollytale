@@ -14,20 +14,8 @@
 	import DemoScrolly from "$components/demo/Demo.Scrolly.svelte";
 </script>
 
-<div id="demo">
-	<h1>Demo</h1>
-	<DemoLink />
-	<DemoImg />
-	<DemoButtonSet />
-	<DemoRange />
-	<DemoSelect />
-	<DemoToggle />
-	<DemoSortTable />
-	<DemoLayerCake />
-	<DemoSvelteElement />
-	<DemoSvelteComponent />
-	<DemoTip />
-	<DemoFigure />
+<div id="headline">
+	<h1>Language Server Protocols</h1>
 	<DemoScrolly />
 </div>
 
