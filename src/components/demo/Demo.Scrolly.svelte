@@ -1,7 +1,7 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 	import DemoSelect from "$components/demo/Demo.Select.svelte";
-	import DemoSlider from "$components/demo/Demo.Slider.svelte";
+	import DemoTip from "$components/demo/Demo.Tip.svelte";
 	import DemoButtonSet from "$components/demo/Demo.ButtonSet.svelte";
 
 	let value;
@@ -21,7 +21,7 @@
                         <DemoSelect/>
                     {/if}
 					{#if i == 1}
-                        <DemoSlider/>
+                        <DemoTip/>
 	
                     {/if}
 					{#if i == 2}
