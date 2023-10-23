@@ -20,18 +20,18 @@
 </div>
 
 <style>
-	#demo {
+	#headline {
 		max-width: 40rem;
 		padding: 16px;
 		margin: 0 auto;
 	}
 
-	:global(#demo section) {
+	:global(#headline section) {
 		margin: 32px auto;
 		padding-top: 32px;
 	}
 
-	:global(#demo h2 span) {
+	:global(#headline h2 span) {
 		background: var(--color-mark);
 		padding: 0 8px;
 	}
