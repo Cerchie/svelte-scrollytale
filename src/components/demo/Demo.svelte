@@ -14,25 +14,47 @@
 	import DemoScrolly from "$components/demo/Demo.Scrolly.svelte";
 </script>
 
-<div id="headline">
-	<h1>Language Server Protocols</h1>
+<div>
+<div id="text-wrapper">
+	<h1 id="headline">Language Server Protocols</h1>
+	<p id="intro">Code editors these days come with some fancy schmancy features like code completion, syntax <b id="highlight">highlighting</b>, and refactoring routines.</p>
+
+	<p id="p-intro-end">How do language developers support these features? Let's find out.</p>
+</div>
 	<DemoScrolly />
 </div>
 
 <style>
+
+    #text-wrapper {
+		position: relative;
+    }
 	#headline {
 		max-width: 40rem;
-		padding: 16px;
-		margin: 0 auto;
+		margin: auto;
+		padding: 2rem;
+		color: var(--color-purple);
 	}
 
-	:global(#headline section) {
-		margin: 32px auto;
-		padding-top: 32px;
+	#highlight {
+		color: var(--category-cyan);
 	}
 
-	:global(#headline h2 span) {
-		background: var(--color-mark);
-		padding: 0 8px;
+
+		#p-intro-end {
+
+		max-width: 40rem;
+		margin: auto;
+		padding: 2rem;
+		color: var(--color-purple);
+		font-size: var(--24px);
+	}
+
+	#intro {
+		max-width: 40rem;
+		margin: auto;
+		padding: 2rem;
+		color: var(--color-purple);
+		font-size: var(--24px);
 	}
 </style>

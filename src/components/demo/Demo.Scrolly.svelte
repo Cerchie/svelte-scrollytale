@@ -10,7 +10,7 @@
 
 <section id="scrolly">
 
-	<h2>Scrolly <span>{value ? value : "ScrollyTitle" }</span></h2>
+	<h2> <span>{value ? value : "The problem" }</span></h2>
 	<div class="spacer" />
 	<Scrolly bind:value>
 
@@ -22,7 +22,6 @@
                     {/if}
 					{#if i == 1}
                         <DemoTip/>
-	
                     {/if}
 					{#if i == 2}
                         <DemoButtonSet/>
@@ -37,6 +36,8 @@
 	h2 {
 		position: sticky;
 		top: 4em;
+		margin-top: 16rem;
+		color: var(--color-purple);
 	}
 
 	.spacer {
@@ -45,7 +46,8 @@
 
 	.step {
 		height: 80vh;
-		background: var(--color-gray-100);
+		width: 100vw;
+		background: var(--color-white);
 		text-align: center;
 	}
 
