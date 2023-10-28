@@ -19,26 +19,30 @@
 		{#each [0,1,2] as text, i}
 			{@const active = value === i}
 			<div class="step" class:active>
-			        {#if i == 0}
-					{#key list}
-	<div in:fade={{ duration: 1000 }}>
-		{#each list as item}
-			<div>{item}</div>
-		{/each}
-	</div>
-{/key}
-<div>
-	<button on:click={() => list = [...list, list.length + 1]}>
-		Add Item
-	</button>
-</div>
-                    {/if}
+
+					{#if i == 0}	
+						{#key list}
+							<div in:fade={{ duration: 1000 }}>
+						{#each list as item}
+							<div>{item}</div>
+						{/each}
+							</div>
+						{/key}
+						<div>
+							<button on:click={() => list = [...list, list.length + 1]}>
+							Add Item
+							</button>
+						</div>
+							{/if}
+
 					{#if i == 1}
                         <DemoTip/>
                     {/if}
+					
 					{#if i == 2}
 					<DemoSelect/>
                     {/if}
+
 			</div>
 		{/each}
 	</Scrolly>
