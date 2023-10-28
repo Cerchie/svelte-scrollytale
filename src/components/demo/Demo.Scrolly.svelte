@@ -1,12 +1,11 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 	import DemoSelect from "$components/demo/Demo.Select.svelte";
-	import DemoTip from "$components/demo/Demo.Tip.svelte";
-	import { fade } from "svelte/transition";
-	import DemoButtonSet from "$components/demo/Demo.ButtonSet.svelte";
-	import DemoFadingGraph from "$components/demo/Demo.FadingGraph.svelte"
+	import FirstGraph from "$components/demo/Demo.FirstGraph.svelte"
+	import SecondGraph from "$components/demo/Demo.SecondGraph.svelte"
+
 	let value;
-	let list = [1, 2, 3]
+	let arrayOfImgs = [FirstGraph, SecondGraph]
 
 </script>
 
@@ -17,28 +16,17 @@
 	<Scrolly bind:value>
 
 		{#each [0,1,2] as text, i}
-			{@const active = value === i}
+			{@const active = value === text}
 			<div class="step" class:active>
 
 					{#if i == 0}	
-						{#key list}
-							<div in:fade={{ duration: 1000 }}>
-						{#each list as item}
-							<div>{item}</div>
-						{/each}
-							</div>
-						{/key}
-						<div>
-							<button on:click={() => list = [...list, list.length + 1]}>
-							Add Item
-							</button>
-						</div>
+						<FirstGraph/>
 							{/if}
 
 					{#if i == 1}
-                        <DemoTip/>
+                        <SecondGraph/>
                     {/if}
-					
+
 					{#if i == 2}
 					<DemoSelect/>
                     {/if}
