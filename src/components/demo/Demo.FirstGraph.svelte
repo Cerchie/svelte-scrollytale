@@ -6,7 +6,7 @@
 <style>
 
 	div {
-		width: 50vw;
+		width: 80vw;
 		background-size: cover;
 		background-position: center center;
 	}

@@ -1,49 +1,34 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
-	import DemoSelect from "$components/demo/Demo.Select.svelte";
-	import FirstGraph from "$components/demo/Demo.FirstGraph.svelte"
-	import SecondGraph from "$components/demo/Demo.SecondGraph.svelte"
 
 	let value;
-	let arrayOfImgs = [FirstGraph, SecondGraph]
 
+	let steps = [
+    `<div>
+	<img src="assets/demo/firstgraph.svg" alt="graph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
+</div>
+`,
+    `<div>
+	<img src="assets/demo/firstgraph.svg" alt="graph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
+</div>`,
+  ];
 </script>
 
 <section id="scrolly">
-
-	<h2> <span>{value ? value : "The problem" }</span></h2>
 	<div class="spacer" />
 	<Scrolly bind:value>
 
-		{#each [0,1,2] as text, i}
-			{@const active = value === text}
-			<div class="step" class:active>
+		{#each steps as text, i}
+		<div class="step" class:active={value === i}>
+		  <div class="step-content">{@html text}</div>
+		</div>
+	  {/each}
 
-					{#if i == 0}	
-						<FirstGraph/>
-							{/if}
-
-					{#if i == 1}
-                        <SecondGraph/>
-                    {/if}
-
-					{#if i == 2}
-					<DemoSelect/>
-                    {/if}
-
-			</div>
-		{/each}
 	</Scrolly>
 	<div class="spacer" />
 </section>
 
 <style>
-	h2 {
-		position: sticky;
-		top: 4em;
-		margin-top: 16rem;
-		color: var(--color-blue);
-	}
 
 	.spacer {
 		height: 75vh;
@@ -56,7 +41,13 @@
 		text-align: center;
 	}
 
-	.step p {
+	.step div {
 		padding: 1rem;
+		animation: fadeIn 7s;
 	}
+
+	@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 </style>

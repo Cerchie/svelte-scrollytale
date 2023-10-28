@@ -17,25 +17,32 @@
     #text-wrapper {
 		position: relative;
     }
+
+	@keyframes fadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+		}
+
 	#headline {
 		max-width: 40rem;
 		margin: auto;
 		padding: 2rem;
 		color: var(--color-blue);
+		animation: fadeIn 4s;
 	}
 
 	#highlight {
 		color: var(--category-cyan);
 	}
 
-
-		#p-intro-end {
+	#p-intro-end {
 
 		max-width: 40rem;
 		margin: auto;
 		padding: 2rem;
 		color: var(--color-blue);
 		font-size: var(--24px);
+		animation: fadeIn 8s;
 	}
 
 	#intro {
@@ -44,5 +51,6 @@
 		padding: 2rem;
 		color: var(--color-blue);
 		font-size: var(--24px);
+		animation: fadeIn 6s;
 	}
 </style>
