@@ -2,9 +2,11 @@
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 	import DemoSelect from "$components/demo/Demo.Select.svelte";
 	import DemoTip from "$components/demo/Demo.Tip.svelte";
+	import { fade } from "svelte/transition";
 	import DemoButtonSet from "$components/demo/Demo.ButtonSet.svelte";
-
+	import DemoFadingGraph from "$components/demo/Demo.FadingGraph.svelte"
 	let value;
+	let list = [1, 2, 3]
 
 </script>
 
@@ -18,13 +20,24 @@
 			{@const active = value === i}
 			<div class="step" class:active>
 			        {#if i == 0}
-                        <DemoSelect/>
+					{#key list}
+	<div in:fade={{ duration: 1000 }}>
+		{#each list as item}
+			<div>{item}</div>
+		{/each}
+	</div>
+{/key}
+<div>
+	<button on:click={() => list = [...list, list.length + 1]}>
+		Add Item
+	</button>
+</div>
                     {/if}
 					{#if i == 1}
                         <DemoTip/>
                     {/if}
 					{#if i == 2}
-                        <DemoButtonSet/>
+					<DemoSelect/>
                     {/if}
 			</div>
 		{/each}
@@ -37,7 +50,7 @@
 		position: sticky;
 		top: 4em;
 		margin-top: 16rem;
-		color: var(--color-purple);
+		color: var(--color-blue);
 	}
 
 	.spacer {

@@ -4,7 +4,7 @@
  */
 
 :root {
-  --category-blue: #1976D2;
+  --category-blue: #000080;
   --category-red: #FF6B6B;
   --category-green:  #4CAF50;
   --category-yellow: #FFD166;
@@ -25,7 +25,7 @@
   --color-gray-900: #262626;
   --color-gray-1000: #191919;
   --color-purple:  #540D6E;
-  --color-blue: #1976D2;
+  --color-blue: #000080;
   --color-green:  #4CAF50;
   --color-red: #FF6B6B;
   --color-yellow: #FFD166;

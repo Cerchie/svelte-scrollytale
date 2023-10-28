@@ -1,6 +1,6 @@
 <script>
-	export let title = "Title TK";
-	export let description = "Description TK";
+	export let title = "LSP | What Is The Language Server Protocol";
+	export let description = "LSP | What Is The Language Server Protocol";
 	export let url = "https://pudding.cool";
 	export let keywords = "";
 	export let preloadFont = [];
@@ -9,7 +9,7 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
-	<meta name="author" content="The Pudding" />
+	<meta name="author" content="Lucia Cerchie" />
 	<meta name="news_keywords" content={keywords} />
 
 	<meta property="og:title" content={title} />

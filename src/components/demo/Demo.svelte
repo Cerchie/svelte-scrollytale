@@ -1,16 +1,4 @@
 <script>
-	import DemoLink from "$components/demo/Demo.Link.svelte";
-	import DemoImg from "$components/demo/Demo.Img.svelte";
-	import DemoButtonSet from "$components/demo/Demo.ButtonSet.svelte";
-	import DemoRange from "$components/demo/Demo.Range.svelte";
-	import DemoSelect from "$components/demo/Demo.Select.svelte";
-	import DemoToggle from "$components/demo/Demo.Toggle.svelte";
-	import DemoSortTable from "$components/demo/Demo.SortTable.svelte";
-	import DemoLayerCake from "$components/demo/Demo.LayerCake.svelte";
-	import DemoSvelteElement from "$components/demo/Demo.SvelteElement.svelte";
-	import DemoSvelteComponent from "$components/demo/Demo.SvelteComponent.svelte";
-	import DemoFigure from "$components/demo/Demo.Figure.svelte";
-	import DemoTip from "$components/demo/Demo.Tip.svelte";
 	import DemoScrolly from "$components/demo/Demo.Scrolly.svelte";
 </script>
 
@@ -33,7 +21,7 @@
 		max-width: 40rem;
 		margin: auto;
 		padding: 2rem;
-		color: var(--color-purple);
+		color: var(--color-blue);
 	}
 
 	#highlight {
@@ -46,7 +34,7 @@
 		max-width: 40rem;
 		margin: auto;
 		padding: 2rem;
-		color: var(--color-purple);
+		color: var(--color-blue);
 		font-size: var(--24px);
 	}
 
@@ -54,7 +42,7 @@
 		max-width: 40rem;
 		margin: auto;
 		padding: 2rem;
-		color: var(--color-purple);
+		color: var(--color-blue);
 		font-size: var(--24px);
 	}
 </style>
