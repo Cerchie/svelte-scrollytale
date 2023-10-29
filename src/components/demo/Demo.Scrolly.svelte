@@ -3,32 +3,45 @@
 
 	let value;
 
+	let scrollPosition = 0;
+
+	function handleScroll(event) {
+	scrollPosition = event.target.scrollTop;
+	}
+
 	let steps = [
     `<div>
-	<img src="assets/demo/firstgraph.svg" alt="graph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
-</div>
-`,
+		<img src="assets/demo/firstgraph.svg" alt="graph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
+    </div>
+	`,
     `<div>
-	<img src="assets/demo/firstgraph.svg" alt="graph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
-</div>`,
+		<img src="assets/demo/secondgraph.svg" alt="graph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
+	</div>`,
   ];
 </script>
 
 <section id="scrolly">
-	<div class="spacer" />
-	<Scrolly bind:value>
 
-		{#each steps as text, i}
+	<div class="spacer" />
+
+	<Scrolly bind:value style={{overflow: 'auto'}}>
+
+		<div on:scroll={handleScroll}>
+			<img src={scrollPosition < 100 ? 'assets/demo/firstgraph.svg' : 'assets/demo/secondgraph.svg'} alt="imageofgraph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
+		</div>	
+
+		<!-- {#each steps as text, i}
 		<div class="step" class:active={value === i}>
 		  <div class="step-content">{@html text}</div>
 		</div>
-	  {/each}
-
+	  {/each} -->
 	</Scrolly>
 	<div class="spacer" />
 </section>
 
 <style>
+
+
 
 	.spacer {
 		height: 75vh;
@@ -47,7 +60,12 @@
 	}
 
 	@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+	}
+
+	@keyframes fadeOut {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+	}
 </style>
