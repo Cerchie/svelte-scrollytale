@@ -7,6 +7,8 @@
 
 	function handleScroll() {
 	scrollPosition = window.scrollY;
+	// what value to use for scrollY so we can implement ternary? 
+	//how to get rid of image when no longer needeD? 
 	}
 
 	let steps = [
@@ -25,7 +27,7 @@
 
 		<figure class='sticky'>
 			<div style={{width: '100%', overflow: 'auto'}} class="img-container">
-				<img src='assets/demo/firstgraph.svg' alt="imageofgraph" class="fixed-image"/>
+				<img on:scroll={handleScroll} src='assets/demo/firstgraph.svg' alt="imageofgraph" class="fixed-image"/>
 			</div>	
 		</figure>
 
