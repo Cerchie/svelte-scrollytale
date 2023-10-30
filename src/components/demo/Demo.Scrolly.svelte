@@ -5,44 +5,46 @@
 
 	let scrollPosition = 0;
 
-	function handleScroll(event) {
-	scrollPosition = event.target.scrollTop;
+	function handleScroll() {
+	scrollPosition = window.scrollY;
 	}
 
 	let steps = [
-    `<div>
-		<img src="assets/demo/firstgraph.svg" alt="graph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
-    </div>
+    `step 1
 	`,
-    `<div>
-		<img src="assets/demo/secondgraph.svg" alt="graph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
-	</div>`,
+    `step 2`,
   ];
 </script>
 
-<section id="scrolly">
+<section id="scrolly" >
 
 	<div class="spacer" />
 
-	<Scrolly bind:value style={{overflow: 'auto'}}>
+	<Scrolly bind:value>
 
-		<div on:scroll={handleScroll}>
-			<img src={scrollPosition < 100 ? 'assets/demo/firstgraph.svg' : 'assets/demo/secondgraph.svg'} alt="imageofgraph" style={{	width: '80vw', backgroundSize: 'cover', backgroundPosition: 'center center'}}/>
-		</div>	
 
-		<!-- {#each steps as text, i}
+		<figure class='sticky'>
+			<div style={{width: '100%', overflow: 'auto'}} class="img-container">
+				<img src='assets/demo/firstgraph.svg' alt="imageofgraph" class="fixed-image"/>
+			</div>	
+		</figure>
+
+		{#each steps as text, i}
 		<div class="step" class:active={value === i}>
 		  <div class="step-content">{@html text}</div>
 		</div>
-	  {/each} -->
+	  {/each}
 	</Scrolly>
 	<div class="spacer" />
 </section>
 
 <style>
 
-
-
+figure.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 	.spacer {
 		height: 75vh;
 	}
