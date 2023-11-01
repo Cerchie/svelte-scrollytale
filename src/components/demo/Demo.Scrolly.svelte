@@ -5,7 +5,7 @@
 	let value;
 
 	let steps = [
-    `step 1
+    `The Language Server Protocol reduces complexity by diminishing the need for each language to cater to each editor.
 	`,
     `step 2`,
   ];
@@ -17,7 +17,7 @@
 
 	<Scrolly bind:value>
 		<figure>
-			<div style={{width: '100%', overflow: 'auto'}} class="img-container">
+			<div style={{width: '100%', overflow: 'auto'}}>
 				<img src='assets/demo/1stgraphwhitebg.svg' alt="imageofgraph" />
 			</div>	
 			<p>PLACEHOLDER</p>
@@ -25,7 +25,7 @@
 
 		<figure class='sticky'>
 			<div style={{width: '100%', overflow: 'auto'}} class="img-container">
-				<img src='assets/demo/1stgraphwhitebg.svg' alt="imageofgraph"/>
+				<img class="image image-1" src="assets/demo/1stgraphwhitebg.svg" alt="1">
 			</div>	
 		</figure>
 <!-- need to fade this one into 2nd image  -->
@@ -35,21 +35,34 @@
 		  <div class="step-content">{@html text}</div>
 		</div>
 	  {/each}
+
+	  <p class="step">TRYING SOMETHING</p>
 	</Scrolly>
 	<div class="spacer" />
 </section>
 
 <style>
 
-/* https://stackoverflow.com/questions/17690669/fade-image-at-the-top */
+
+.img-container {
+	background-image: url('assets/demo/2ndgraphwhitebg.svg');
+	background-size: contain;
+}
 
 
-figure.sticky {
+.image.image-1 {
+    animation: fadeOut 3s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* figure.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  animation: fadeOut 5s;
 }
+  /* animation: fadeOut 5s; */
+ /* styles for parallaz scroll */
+
 	.spacer {
 		height: 25vh;
 	}
@@ -72,6 +85,6 @@ figure.sticky {
 
 	@keyframes fadeOut {
 	0% { opacity: 1; }
-	100% { opacity: .5; }
+	100% { opacity: 0; }
 	}
 </style>
