@@ -1,15 +1,8 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 
+	// https://blog.hubspot.com/website/css-animate-on-scroll
 	let value;
-
-	let scrollPosition = 0;
-
-	function handleScroll() {
-	scrollPosition = window.scrollY;
-	// what value to use for scrollY so we can implement ternary? 
-	//how to get rid of image when no longer needeD? 
-	}
 
 	let steps = [
     `step 1
@@ -23,13 +16,19 @@
 	<div class="spacer" />
 
 	<Scrolly bind:value>
-
+		<figure>
+			<div style={{width: '100%', overflow: 'auto'}} class="img-container">
+				<img src='assets/demo/1stgraphwhitebg.svg' alt="imageofgraph" />
+			</div>	
+			<p>PLACEHOLDER</p>
+		</figure>
 
 		<figure class='sticky'>
 			<div style={{width: '100%', overflow: 'auto'}} class="img-container">
-				<img on:scroll={handleScroll} src='assets/demo/firstgraph.svg' alt="imageofgraph" class="fixed-image"/>
+				<img src='assets/demo/1stgraphwhitebg.svg' alt="imageofgraph"/>
 			</div>	
 		</figure>
+<!-- need to fade this one into 2nd image  -->
 
 		{#each steps as text, i}
 		<div class="step" class:active={value === i}>
@@ -42,13 +41,17 @@
 
 <style>
 
+/* https://stackoverflow.com/questions/17690669/fade-image-at-the-top */
+
+
 figure.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  animation: fadeOut 5s;
 }
 	.spacer {
-		height: 75vh;
+		height: 25vh;
 	}
 
 	.step {
@@ -60,7 +63,6 @@ figure.sticky {
 
 	.step div {
 		padding: 1rem;
-		animation: fadeIn 7s;
 	}
 
 	@keyframes fadeIn {
@@ -70,6 +72,6 @@ figure.sticky {
 
 	@keyframes fadeOut {
 	0% { opacity: 1; }
-	100% { opacity: 0; }
+	100% { opacity: .5; }
 	}
 </style>

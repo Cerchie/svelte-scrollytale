@@ -28,7 +28,6 @@
 		margin: auto;
 		padding: 2rem;
 		color: var(--color-blue);
-		animation: fadeIn 4s;
 	}
 
 	#highlight {
@@ -42,7 +41,6 @@
 		padding: 2rem;
 		color: var(--color-blue);
 		font-size: var(--24px);
-		animation: fadeIn 8s;
 	}
 
 	#intro {
@@ -51,6 +49,5 @@
 		padding: 2rem;
 		color: var(--color-blue);
 		font-size: var(--24px);
-		animation: fadeIn 6s;
 	}
 </style>
