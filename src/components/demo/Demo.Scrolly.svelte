@@ -5,6 +5,8 @@
 	let value;
 
 	let steps = [
+		``,
+		``,
     `The Language Server Protocol reduces complexity by diminishing the need for each language to cater to each editor.
 	`,
     `step 2`,
@@ -28,8 +30,7 @@
 				<img class="image image-1" src="assets/demo/1stgraphwhitebg.svg" alt="1">
 			</div>	
 		</figure>
-<!-- need to fade this one into 2nd image  -->
-
+<!-- can't move the above ^ into steps because need the CSS classes to be accessible from styles -->
 		{#each steps as text, i}
 		<div class="step" class:active={value === i}>
 		  <div class="step-content">{@html text}</div>
