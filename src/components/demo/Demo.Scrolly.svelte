@@ -1,12 +1,6 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
-	import ButtonSet from "$components/helpers/ButtonSet.svelte";
-	const options = [
-		{ value: "penny" },
-		{ value: "nickel" },
-		{ value: "dime" },
-		{ value: "quarter" }
-	];
+
 	// https://blog.hubspot.com/website/css-animate-on-scroll
 	let value;
 	let steps = [
@@ -44,16 +38,34 @@
 	  {/each}
 
 	  <p class="step">TRYING SOMETHING</p>
-<ButtonSet/>
+	  <button class="custom-button">Send client request</button>
+	   <!-- use anime js play pause controls to send client request and back. don't use these buttons like you were thining https://animejs.com/documentation/#playPause  -->
+	  <button class="custom-button">Send second client request</button>
 	</Scrolly>
 
-		<h2>Button Set <span>{value}</span></h2>
-		<ButtonSet legend={"Choose"} {options} bind:value />
 	<div class="spacer" />
 </section>
 
 <style>
 
+.custom-button {
+    background-color: white; /* Background color */
+    color: var(--color-purple); /* Text color */
+    border: 3px solid var(--color-purple);
+    padding: 10px 20px;
+    border-radius: 10px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	font-family: Playfair Display;
+	font-size: x-large;
+}
+
+.custom-button:hover {
+    background-color: var(--color-purple); /* Change background color on hover */
+    color: white; /* Text color */
+    border: 3px solid var(--color-purple);
+}
 
 .img-container {
 	background-image: url('assets/demo/2ndgraphwhitebg.svg');
