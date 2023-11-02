@@ -1,6 +1,6 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
-
+	import anime from 'animejs';
 	// https://blog.hubspot.com/website/css-animate-on-scroll
 	let value;
 	let steps = [
@@ -10,6 +10,26 @@
 	`,
     `step 2`,
   ];
+
+
+  var requestButtonBehavior = function() {
+
+var animation = anime({
+  targets: '.request-box .el',
+  translateX: 270,
+  delay: function(el, i) { return i * 100; },
+  direction: 'alternate',
+  loop: false,
+  autoplay: false,
+  easing: 'easeInOutSine'
+});
+
+document.querySelector('.play-pause-demo .play').onclick = animation.play;
+document.querySelector('.play-pause-demo .pause').onclick = animation.pause;
+/*DEMO*/
+}
+
+
 </script>
 
 <section id="scrolly" >
@@ -38,9 +58,17 @@
 	  {/each}
 
 	  <p class="step">TRYING SOMETHING</p>
-	  <button class="custom-button">Send client request</button>
-	   <!-- use anime js play pause controls to send client request and back. don't use these buttons like you were thining https://animejs.com/documentation/#playPause  -->
-	  <button class="custom-button">Send second client request</button>
+		<div class="request-path">
+			<div class="request-box el"></div>
+		</div>
+		<div class="request-path">
+			<div class="request-box el"></div>
+		</div>
+		<div class="request-controls">
+			<button class="play" on:click={requestButtonBehavior }> Send client requests</button>
+			<button class="pause"  on:click={requestButtonBehavior }> Pause</button>
+		</div>
+	
 	</Scrolly>
 
 	<div class="spacer" />
@@ -48,7 +76,7 @@
 
 <style>
 
-.custom-button {
+.play {
     background-color: white; /* Background color */
     color: var(--color-purple); /* Text color */
     border: 3px solid var(--color-purple);
@@ -61,7 +89,26 @@
 	font-size: x-large;
 }
 
-.custom-button:hover {
+.play:hover {
+    background-color: var(--color-purple); /* Change background color on hover */
+    color: white; /* Text color */
+    border: 3px solid var(--color-purple);
+}
+
+.pause {
+    background-color: white; /* Background color */
+    color: var(--color-purple); /* Text color */
+    border: 3px solid var(--color-purple);
+    padding: 10px 20px;
+    border-radius: 10px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	font-family: Playfair Display;
+	font-size: x-large;
+}
+
+.pause:hover {
     background-color: var(--color-purple); /* Change background color on hover */
     color: white; /* Text color */
     border: 3px solid var(--color-purple);
