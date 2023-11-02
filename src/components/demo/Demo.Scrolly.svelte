@@ -1,9 +1,14 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
-
+	import ButtonSet from "$components/helpers/ButtonSet.svelte";
+	const options = [
+		{ value: "penny" },
+		{ value: "nickel" },
+		{ value: "dime" },
+		{ value: "quarter" }
+	];
 	// https://blog.hubspot.com/website/css-animate-on-scroll
 	let value;
-
 	let steps = [
 		``,
 		``,
@@ -30,6 +35,7 @@
 				<img class="image image-1" src="assets/demo/1stgraphwhitebg.svg" alt="1">
 			</div>	
 		</figure>
+		<!-- TODO-- fade in ON SCROLL -->
 <!-- can't move the above ^ into steps because need the CSS classes to be accessible from styles -->
 		{#each steps as text, i}
 		<div class="step" class:active={value === i}>
@@ -38,7 +44,11 @@
 	  {/each}
 
 	  <p class="step">TRYING SOMETHING</p>
+<ButtonSet/>
 	</Scrolly>
+
+		<h2>Button Set <span>{value}</span></h2>
+		<ButtonSet legend={"Choose"} {options} bind:value />
 	<div class="spacer" />
 </section>
 
