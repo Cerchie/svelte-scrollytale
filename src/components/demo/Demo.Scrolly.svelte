@@ -2,6 +2,7 @@
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 	import anime from 'animejs';
 	// https://blog.hubspot.com/website/css-animate-on-scroll
+
 	let value;
 	let steps = [
 		``,
@@ -15,7 +16,7 @@
   var requestButtonBehavior = function() {
 
 var animation = anime({
-  targets: '.request-box .el',
+  targets: '.request-container .div',
   translateX: 270,
   delay: function(el, i) { return i * 100; },
   direction: 'alternate',
@@ -24,8 +25,8 @@ var animation = anime({
   easing: 'easeInOutSine'
 });
 
-document.querySelector('.play-pause-demo .play').onclick = animation.play;
-document.querySelector('.play-pause-demo .pause').onclick = animation.pause;
+document.querySelector('.request-controls .play').onclick = animation.play;
+document.querySelector('.request-controls .pause').onclick = animation.pause;
 /*DEMO*/
 }
 
@@ -58,16 +59,21 @@ document.querySelector('.play-pause-demo .pause').onclick = animation.pause;
 	  {/each}
 
 	  <p class="step">TRYING SOMETHING</p>
+	  <div class="request-container">
 		<div class="request-path">
-			<div class="request-box el"></div>
+			<div class="requestBox"></div>
 		</div>
+		</div>
+		<div class="request-container">
 		<div class="request-path">
-			<div class="request-box el"></div>
+			<div class="requestBox"></div>
+		</div>
 		</div>
 		<div class="request-controls">
-			<button class="play" on:click={requestButtonBehavior }> Send client requests</button>
-			<button class="pause"  on:click={requestButtonBehavior }> Pause</button>
+			<button class="play" on:click={requestButtonBehavior}> Send client requests</button>
+			<button class="pause"  on:click={requestButtonBehavior}> Pause</button>
 		</div>
+
 	
 	</Scrolly>
 
@@ -76,6 +82,17 @@ document.querySelector('.play-pause-demo .pause').onclick = animation.pause;
 
 <style>
 
+.request-path	{
+	height: 20px;
+	width: 200px;
+	background-color: red;
+	margin: .5rem;
+}
+.requestBox {
+	height: 20px;
+	width: 20px;
+	background-color: blue;
+}
 .play {
     background-color: white; /* Background color */
     color: var(--color-purple); /* Text color */
