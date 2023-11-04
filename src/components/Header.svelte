@@ -8,7 +8,7 @@
 </header>
 
 <style>
-	.wordmark {
+	/* .wordmark {
 		max-width: 10em;
 		margin: 0 auto;
 		padding: 1em 0;
@@ -18,7 +18,7 @@
 		border: none;
 		display: block;
 		color: var(--color-fg);
-	}
+	} */
 
 	.wordmark a:hover {
 		background-color: transparent;

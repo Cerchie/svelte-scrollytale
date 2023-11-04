@@ -1,34 +1,36 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
+	import {onMount} from 'svelte'
 	import anime from 'animejs';
 	// https://blog.hubspot.com/website/css-animate-on-scroll
 
 	let value;
 	let steps = [
-		``,
-		``,
+
     `The Language Server Protocol reduces complexity by diminishing the need for each language to cater to each editor.
 	`,
     `step 2`,
   ];
 
+  onMount(() => {
+	console.log("snikmdj")
+		
+			var animation = anime({
+			targets:  '.requestBox',
+			translateX: 270,
+			delay: function(el, i) { return i * 100; },
+			direction: 'alternate',
+			loop: true,
+			autoplay: true,
+			easing: 'easeInOutSine'
+		});
+		
+	document.querySelector('.request-controls .play').onclick = animation.play;
+	document.querySelector('.request-controls .pause').onclick = animation.pause;
+	
 
-  var requestButtonBehavior = function() {
-
-var animation = anime({
-  targets: '.request-container .div',
-  translateX: 270,
-  delay: function(el, i) { return i * 100; },
-  direction: 'alternate',
-  loop: false,
-  autoplay: false,
-  easing: 'easeInOutSine'
 });
 
-document.querySelector('.request-controls .play').onclick = animation.play;
-document.querySelector('.request-controls .pause').onclick = animation.pause;
-/*DEMO*/
-}
 
 
 </script>
@@ -61,7 +63,7 @@ document.querySelector('.request-controls .pause').onclick = animation.pause;
 	  <p class="step">TRYING SOMETHING</p>
 	  <div class="request-container">
 		<div class="request-path">
-			<div class="requestBox"></div>
+			<div class="requestBox" style="transform: translateX(0px);  "></div>
 		</div>
 		</div>
 		<div class="request-container">
@@ -70,8 +72,8 @@ document.querySelector('.request-controls .pause').onclick = animation.pause;
 		</div>
 		</div>
 		<div class="request-controls">
-			<button class="play" on:click={requestButtonBehavior}> Send client requests</button>
-			<button class="pause"  on:click={requestButtonBehavior}> Pause</button>
+			<button class="play"> Send client requests</button>
+			<button class="pause"> Pause</button>
 		</div>
 
 	
@@ -134,6 +136,7 @@ document.querySelector('.request-controls .pause').onclick = animation.pause;
 .img-container {
 	background-image: url('assets/demo/2ndgraphwhitebg.svg');
 	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 
