@@ -18,7 +18,7 @@
 			keyframes: [
 				{translateX: 270},
 				{rotateY: 180},
-				{translateX: -270},
+				{translateX: -27},
 			],
 			
 			
@@ -66,21 +66,26 @@
 	  {/each}
 
 	  <p class="step">TRYING SOMETHING</p>
+	  <div class="animation-request-container">
 	  <div class="request-container">
+			<div class="client">Client</div>
 		<div class="request-path">
 			<div class="requestBox"></div>
 		</div>
 		</div>
+		<div class="server">Server</div>
 		<div class="request-container">
+			<div class="client">Client</div>
 		<div class="request-path">
 			<div class="requestBox"></div>
 		</div>
 		</div>
+
 		<div class="request-controls">
 			<button class="play"> Send client requests</button>
 			<button class="pause"> Pause</button>
 		</div>
-
+	</div>
 	
 	</Scrolly>
 
@@ -89,14 +94,29 @@
 
 <style>
 
+.server {
+	margin-left: 30em;
+	background-color: aqua;
+	width: 6em;
+	height: 4em;
+}
+.animation-request-container {
+	margin: auto;
+}
+
+.request-container {
+	margin-left: 10em;
+
+}
 .request-path	{
 	height: 20px;
 	width: 270px;
 	background-color: var(--color-gray-200);
-	margin: .5rem;
+	margin: .5em;
 }
 
 .requestBox {
+
 	width: 0;
   height: 0;
   border-top: 20px solid transparent;
@@ -168,7 +188,7 @@
 	}
 
 	.step div {
-		padding: 1rem;
+		padding: 1em;
 	}
 
 	@keyframes fadeIn {
