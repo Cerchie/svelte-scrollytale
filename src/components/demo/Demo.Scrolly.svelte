@@ -6,23 +6,28 @@
 
 	let value;
 	let steps = [
-
     `The Language Server Protocol reduces complexity by diminishing the need for each language to cater to each editor.
 	`,
     `step 2`,
   ];
 
   onMount(() => {
-	console.log("snikmdj")
 		
 			var animation = anime({
 			targets:  '.requestBox',
-			translateX: 270,
-			delay: function(el, i) { return i * 100; },
-			direction: 'alternate',
+			keyframes: [
+				{translateX: 270},
+				{rotateY: 180},
+				{translateX: -270},
+			],
+			
+			
+			delay: function(el, i) { return i * 300; },
+			direction: 'normal',
 			loop: true,
 			autoplay: true,
-			easing: 'easeInOutSine'
+			easing: 'easeInOutSine',
+			duration: 4000
 		});
 		
 	document.querySelector('.request-controls .play').onclick = animation.play;
@@ -63,7 +68,7 @@
 	  <p class="step">TRYING SOMETHING</p>
 	  <div class="request-container">
 		<div class="request-path">
-			<div class="requestBox" style="transform: translateX(0px);  "></div>
+			<div class="requestBox"></div>
 		</div>
 		</div>
 		<div class="request-container">
@@ -86,14 +91,20 @@
 
 .request-path	{
 	height: 20px;
-	width: 200px;
-	background-color: red;
+	width: 270px;
+	background-color: var(--color-gray-200);
 	margin: .5rem;
 }
+
 .requestBox {
-	height: 20px;
-	width: 20px;
-	background-color: blue;
+	width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 30px solid blue;
+  display: inline-block;
+  padding: 3px;
+  
 }
 .play {
     background-color: white; /* Background color */
@@ -144,14 +155,6 @@
     animation: fadeOut 3s ease-in-out forwards;
     animation-delay: 0.5s;
 }
-
-/* figure.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-}
-  /* animation: fadeOut 5s; */
- /* styles for parallaz scroll */
 
 	.spacer {
 		height: 25vh;
