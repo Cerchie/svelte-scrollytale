@@ -103,6 +103,7 @@
 	margin-left: 30em;
 	padding-top: .5em;
 	background-color: var(--category-cyan);
+	border: 3px solid  var(--category-cyan);
 	width: 6em;
 	height: 3em;
 	border-radius: 20px;
