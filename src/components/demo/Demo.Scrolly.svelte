@@ -66,21 +66,23 @@
 	  <p class="step">TRYING SOMETHING</p>
 	  <div class="animation-request-container">
 	  <div class="request-container">
-			<div class="client">Client</div>
+		
+			<div class="request">Request 1</div>
 		<div class="request-path">
 			<div class="requestBox"></div>
+			<div class="client">Client</div>
 		</div>
 		</div>
 		<div class="server">Server</div>
 		<div class="request-container">
-			<div class="client">Client</div>
+			<div class="request">Request 2</div>
 		<div class="request-path">
 			<div class="requestBox"></div>
 		</div>
 		</div>
 
 		<div class="request-controls">
-			<button class="play"> Send client requests</button>
+			<button class="play"> Send</button>
 			<button class="pause"> Pause</button>
 		</div>
 	</div>
@@ -91,75 +93,116 @@
 </section>
 
 <style>
+	.request-controls{
+		margin: auto;
+		margin-top: 3em;
+	}
 
 .server {
+	margin-top: 1em;
 	margin-left: 30em;
-	background-color: aqua;
+	padding-top: .5em;
+	background-color: var(--category-cyan);
 	width: 6em;
-	height: 4em;
+	height: 3em;
+	border-radius: 20px;
+	text-align: center;
+	color: white;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.client {
+	margin-left: -8em;
+	margin-top: 1em;
+	padding-top: .5em;
+	background-color: white;
+	color: var(--category-cyan);
+	border: 3px solid  var(--category-cyan);
+	width: 6em;
+	height: 3em;
+	border-radius: 20px;
+	text-align: center;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .animation-request-container {
 	margin: auto;
+	padding: 2em;
+}
+.request {
+	margin-bottom: 1em;
+	/* text-decoration: var(--category-cyan)  underline;
+	text-decoration-style: solid;
+	text-decoration-thickness: .1em; */
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.request-container {
+	margin: auto;
+	width: 50%;
+	padding: 0;
 }
 
-.request-container {
-	margin-left: 10em;
+.request-controls{
+	padding: 4em;
+	margin: auto;
+	width: 50%;
 
 }
 .request-path	{
-	height: 20px;
+	height: 1em;
 	width: 270px;
-	background-color: var(--color-gray-200);
+	background-color: white;
 	margin: .5em;
+	align-content: center;
+	border:dashed 4px var(--color-gray-200);
+	border-top-left-radius: 255px 120px;
+      border-top-right-radius: 120px 225px;
+      border-bottom-right-radius: 225px 120px;
+      border-bottom-left-radius:120px 255px;
 }
 
 .requestBox {
 
-	width: 0;
+  width: 0;
   height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 30px solid blue;
-  display: inline-block;
-  padding: 3px;
-  
+  margin-top: -.5em;
+  margin-left: -.5em;
+  border-top: .75em solid transparent;
+  border-bottom: .75em solid transparent;
+  border-left: 1.25em solid var(--color-purple);
+
 }
 .play {
-    background-color: white; /* Background color */
-    color: var(--color-purple); /* Text color */
-    border: 3px solid var(--color-purple);
-    padding: 10px 20px;
-    border-radius: 10px; 
-    font-size: 16px;
+	margin-right: 1em;
+	height: 2em;
+    color: white; /* Background color */
+    background-color: var(--color-purple); /* Text color */
     cursor: pointer;
     transition: background-color 0.3s ease;
-	font-family: Playfair Display;
-	font-size: x-large;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: large;
 }
 
 .play:hover {
-    background-color: var(--color-purple); /* Change background color on hover */
-    color: white; /* Text color */
-    border: 3px solid var(--color-purple);
+    color: var(--color-purple); /* Change background color on hover */
+    background-color: white; /* Text color */
+    border: 1px solid var(--color-purple);
 }
 
 .pause {
-    background-color: white; /* Background color */
-    color: var(--color-purple); /* Text color */
-    border: 3px solid var(--color-purple);
-    padding: 10px 20px;
-    border-radius: 10px; 
-    font-size: 16px;
+	margin-left: 1em;
+	height: 2em;
+    color: white; /* Background color */
+    background-color: var(--color-purple); /* Text color */
     cursor: pointer;
     transition: background-color 0.3s ease;
-	font-family: Playfair Display;
-	font-size: x-large;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: large;
 }
 
 .pause:hover {
-    background-color: var(--color-purple); /* Change background color on hover */
-    color: white; /* Text color */
-    border: 3px solid var(--color-purple);
+    color: var(--color-purple); /* Change background color on hover */
+    background-color: white; /* Text color */
+    border: 1px solid var(--color-purple);
 }
 
 .img-container {
@@ -183,6 +226,7 @@
 		width: 100vw;
 		background: var(--color-white);
 		text-align: center;
+		
 	}
 
 	.step div {
