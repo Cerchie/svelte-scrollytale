@@ -19,13 +19,11 @@
 				{translateX: 270},
 				{rotateY: 180},
 				{translateX: -27},
-			],
-			
-			
+			],	
 			delay: function(el, i) { return i * 300; },
 			direction: 'normal',
-			loop: true,
-			autoplay: true,
+			loop: false,
+			autoplay: false,
 			easing: 'easeInOutSine',
 			duration: 4000
 		});
