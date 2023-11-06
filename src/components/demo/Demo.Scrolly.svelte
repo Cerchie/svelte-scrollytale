@@ -44,26 +44,28 @@
 
 	<Scrolly bind:value>
 		<figure>
-			<div style={{width: '100%', overflow: 'auto'}}>
-				<img src='assets/demo/1stgraphwhitebg.svg' alt="imageofgraph" />
+			<div class="img-container">
+				<img class="image image-2" src='assets/demo/1stgraphwhitebg.svg' alt="imageofgraph" />
 			</div>	
 			<p>PLACEHOLDER</p>
 		</figure>
 
 		<figure class='sticky'>
-			<div style={{width: '100%', overflow: 'auto'}} class="img-container">
+			<div class="img-container-2">
 				<img class="image image-1" src="assets/demo/1stgraphwhitebg.svg" alt="1">
+	
 			</div>	
+
 		</figure>
+		<p>placeholder</p>
 		<!-- TODO-- fade in ON SCROLL -->
 <!-- can't move the above ^ into steps because need the CSS classes to be accessible from styles -->
-		{#each steps as text, i}
+		<!-- {#each steps as text, i}
 		<div class="step" class:active={value === i}>
 		  <div class="step-content">{@html text}</div>
 		</div>
-	  {/each}
+	  {/each} -->
 
-	  <p class="step">TRYING SOMETHING</p>
 	  <div class="animation-request-container">
 	  <div class="request-container">
 		
@@ -207,15 +209,29 @@
 }
 
 .img-container {
+	align-content: center;
+
+}
+
+.img-container-2 {
 	background-image: url('assets/demo/2ndgraphwhitebg.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
+	align-content: center;
+
 }
 
+.image.image-2 {
+	margin: auto;
+	width: 70vw;
+}
 
 .image.image-1 {
+	margin: auto;
     animation: fadeOut 3s ease-in-out forwards;
-    animation-delay: 0.5s;
+    animation-delay: 5s;
+	width: 70vw;
+
 }
 
 	.spacer {
