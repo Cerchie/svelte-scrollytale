@@ -96,10 +96,70 @@
 	data-text="goToDefinition" 
 	class="tooltip"
   >variableName</span> = newValue;</div>
+<div class="spaceer"></div>
+
+<div class="gotodef-request-illustration-container">
+  <div class="client-gotodef">client</div>
+  <div class="gotodef-request-container">
+  <div class="gotodef-params">
+	{"{Document URI, position}"}  </div>
+  <div class="gotodef-request">
+	goToDefinition
+  </div>
+</div>
+  <div class="server">server</div>
+</div>
 	<div class="spacer" />
 </section>
 
 <style>
+
+
+.gotodef-request-container { 
+	margin-top: -2em;
+	margin-right: -8em;
+
+}
+
+	.gotodef-request-illustration-container {
+		border: 2px solid black;
+  border-radius:10px;
+		margin: 2em;
+		padding: 1em;
+	}
+
+	.gotodef-params {
+			width:200px;
+  padding:10px;
+  border: 2px solid black;
+  border-radius:10px;
+  background:white;
+  color: black;
+  text-align:center;
+  width: 25%;
+	margin: auto;
+	margin-top: 2em;
+	margin-bottom: -2em;
+	border-radius: 10px 10px 0px 0px;
+	font-family: 'Courier New', Courier, monospace;
+font-weight: 700;
+	}
+
+	.gotodef-request {
+	width:200px;
+  padding:10px;
+  border-radius: 0px 0px 10px 10px;
+  background:#000;
+  color: #fff;
+  text-align:center;
+  width: 25%;
+	margin: auto;
+	margin-top: 2em;
+	font-family: 'Courier New', Courier, monospace;
+font-weight: 700;
+
+}
+
 .exit-btn {
 	border: 2px solid black;
 	height: 1.5em;
@@ -152,6 +212,7 @@ background-color: #edebf5;
   /* hide by default */
 }
 
+
 .tooltip:hover:before {
   display:block;
 }
@@ -180,6 +241,20 @@ background-color: #edebf5;
 .client {
 	margin-left: -8em;
 	margin-top: 1em;
+	padding-top: .5em;
+	background-color: #edebf5;
+	color: black;
+	border: 3px solid  black;
+	width: 6em;
+	height: 3em;
+	border-radius: 20px;
+	text-align: center;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.client-gotodef {
+	margin-top: 1em;
+	margin-left: 30em;
 	padding-top: .5em;
 	background-color: #edebf5;
 	color: black;
