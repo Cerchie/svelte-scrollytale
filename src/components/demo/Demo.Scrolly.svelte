@@ -1,5 +1,6 @@
 <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
+	import GoToDef from "$components/demo/Demo.GoToDef.svelte";
 	import {onMount} from 'svelte'
 	import anime from 'animejs';
 	
@@ -31,7 +32,20 @@
 		
 	document.querySelector('.request-controls .play').onclick = animation.play;
 	document.querySelector('.request-controls .pause').onclick = animation.pause;
-	
+
+	var animationGoToDefReq = anime({
+        targets:  '.gotodef-params',
+        keyframes: [
+            {translateX: 230},
+            {translateY: 50},
+        ],	
+        delay: function(el, i) { return i * 300; },
+        direction: 'normal',
+        loop: true,
+        autoplay: true,
+        easing: 'easeInOutSine',
+        duration: 4000
+    });
 
 });
 
@@ -96,69 +110,13 @@
 	data-text="goToDefinition" 
 	class="tooltip"
   >variableName</span> = newValue;</div>
-<div class="spaceer"></div>
+<div class="spacer"></div>
 
-<div class="gotodef-request-illustration-container">
-  <div class="client-gotodef">client</div>
-  <div class="gotodef-request-container">
-  <div class="gotodef-params">
-	{"{Document URI, position}"}  </div>
-  <div class="gotodef-request">
-	goToDefinition
-  </div>
-</div>
-  <div class="server">server</div>
-</div>
+<GoToDef/>
 	<div class="spacer" />
 </section>
 
 <style>
-
-
-.gotodef-request-container { 
-	margin-top: -2em;
-	margin-right: -8em;
-
-}
-
-	.gotodef-request-illustration-container {
-		border: 2px solid black;
-  border-radius:10px;
-		margin: 2em;
-		padding: 1em;
-	}
-
-	.gotodef-params {
-			width:200px;
-  padding:10px;
-  border: 2px solid black;
-  border-radius:10px;
-  background:white;
-  color: black;
-  text-align:center;
-  width: 25%;
-	margin: auto;
-	margin-top: 2em;
-	margin-bottom: -2em;
-	border-radius: 10px 10px 0px 0px;
-	font-family: 'Courier New', Courier, monospace;
-font-weight: 700;
-	}
-
-	.gotodef-request {
-	width:200px;
-  padding:10px;
-  border-radius: 0px 0px 10px 10px;
-  background:#000;
-  color: #fff;
-  text-align:center;
-  width: 25%;
-	margin: auto;
-	margin-top: 2em;
-	font-family: 'Courier New', Courier, monospace;
-font-weight: 700;
-
-}
 
 .exit-btn {
 	border: 2px solid black;
@@ -252,19 +210,7 @@ background-color: #edebf5;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.client-gotodef {
-	margin-top: 1em;
-	margin-left: 30em;
-	padding-top: .5em;
-	background-color: #edebf5;
-	color: black;
-	border: 3px solid  black;
-	width: 6em;
-	height: 3em;
-	border-radius: 20px;
-	text-align: center;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+
 .animation-request-container {
 	margin: auto;
 	padding: 2em;
