@@ -38,14 +38,23 @@
         keyframes: [
             {translateX: 230},
             {translateY: 50},
+			{innerHTML: 'Location'},
+			{update: async function(anime){
+				div.innerHTML = innerHTML.splice(0, innerHTML.length-2); 
+			}},
+			// .splice(0, innerHTML.length-2)
+			{translateX: -10},
+            {translateY: -23},
         ],	
         delay: function(el, i) { return i * 300; },
         direction: 'normal',
-        loop: true,
-        autoplay: true,
+        loop: false,
+        autoplay: false,
         easing: 'easeInOutSine',
         duration: 4000
     });
+
+	document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 
 });
 
