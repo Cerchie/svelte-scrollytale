@@ -2,6 +2,7 @@
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 	import {onMount} from 'svelte'
 	import anime from 'animejs';
+	
 	// https://blog.hubspot.com/website/css-animate-on-scroll
 
 	let value;
@@ -33,8 +34,6 @@
 	
 
 });
-
-
 
 </script>
 
@@ -88,13 +87,77 @@
 			<button class="pause"> Pause</button>
 		</div>
 	</div>
-	
+
 	</Scrolly>
 
+	<div class="editorwindow">
+		<div class="exit-btn">X</div>
+	<span 
+	data-text="goToDefinition" 
+	class="tooltip"
+  >variableName</span> = newValue;</div>
 	<div class="spacer" />
 </section>
 
 <style>
+.exit-btn {
+	border: 2px solid black;
+	height: 1.5em;
+	width: 1.5em;
+	margin-top: .5em;
+	margin-left: .5em;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: 200;
+	border-radius: 2px;
+	background-color: white;
+}
+.editorwindow {
+	border: 2px solid black;
+	border-radius: 2px;
+	width: 50%;
+	margin: auto;
+	text-align: center;
+padding-bottom: 1em;
+font-family: 'Courier New', Courier, monospace;
+font-weight: 700;
+background-color: #edebf5;
+}
+.tooltip {
+  position:relative; /* making the .tooltip span a container for the tooltip text */
+  border-bottom:1px dashed #000; /* little indicater to indicate it's hoverable */
+}
+
+.tooltip:before {
+  content: attr(data-text); /* here's the magic */
+  position:absolute;
+  
+  /* vertically center */
+  top:50%;
+  transform:translateY(-50%);
+  
+  /* move to right */
+  left:100%;
+	margin-left: -2em;
+  margin-top: -2em;
+  
+  /* basic styles */
+  width:200px;
+  padding:10px;
+  border-radius:10px;
+  background:#000;
+  color: #fff;
+  text-align:center;
+
+  display:none; 
+  /* hide by default */
+}
+
+.tooltip:hover:before {
+  display:block;
+}
+
+/* source: https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
+	
 	.request-controls{
 		margin: auto;
 		margin-top: 3em;
@@ -104,13 +167,13 @@
 	margin-top: 1em;
 	margin-left: 30em;
 	padding-top: .5em;
-	background-color: var(--category-cyan);
-	border: 3px solid  var(--category-cyan);
+	background-color: #fce8d7;
+	border: 3px solid  black;
 	width: 6em;
 	height: 3em;
 	border-radius: 20px;
 	text-align: center;
-	color: white;
+	color: black;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -118,9 +181,9 @@
 	margin-left: -8em;
 	margin-top: 1em;
 	padding-top: .5em;
-	background-color: white;
-	color: var(--category-cyan);
-	border: 3px solid  var(--category-cyan);
+	background-color: #edebf5;
+	color: black;
+	border: 3px solid  black;
 	width: 6em;
 	height: 3em;
 	border-radius: 20px;
