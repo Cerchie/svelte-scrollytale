@@ -9,7 +9,7 @@ const tick = (timestamp) => {
 	if (!prev) prev = timestamp;
 	const diff = Math.round(timestamp - prev);
 	prev = timestamp;
-	elapsed.update(e => e + diff);
+	elapsed.update((e) => e + diff);
 	req = window.requestAnimationFrame(tick);
 };
 
