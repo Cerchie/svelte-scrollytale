@@ -30,30 +30,34 @@
 			duration: 4000
 		});
 		
-	document.querySelector('.request-controls .play').onclick = animation.play;
-	document.querySelector('.request-controls .pause').onclick = animation.pause;
+
 
 	var animationGoToDefReq = anime({
         targets:  '.gotodef-params',
         keyframes: [
             {translateY: 150},
 			{innerHTML: 'Location'},
-			{update: async function(anime){
-				div.innerHTML = innerHTML.splice(0, innerHTML.length-2); 
-			}},
-            {translateY: -10},
+            {translateY: -2},
         ],	
-        delay: function(el, i) { return i * 300; },
+        delay: function(el, i) { return i * 400; },
         direction: 'normal',
         loop: true,
-        autoplay: false,
-        easing: 'easeInOutSine',
-        duration: 4000
-    });
-
-	document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
+        autoplay: true,
+        easing: 'easeInSine',
+        duration: 4000,
+		update: async function(){
+				var obj = document.querySelector('.gotodef-params');
+				return obj.innerHTML = obj.innerHTML.slice(0, obj.innerHTML.length - 2);
+			
+		}
 
 });
+
+document.querySelector('.request-controls .play').onclick = animation.play;
+document.querySelector('.request-controls .pause').onclick = animation.pause;
+
+document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
+  })
 
 </script>
 
