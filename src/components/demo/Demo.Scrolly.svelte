@@ -36,19 +36,16 @@
 	var animationGoToDefReq = anime({
         targets:  '.gotodef-params',
         keyframes: [
-            {translateX: 230},
-            {translateY: 50},
+            {translateY: 150},
 			{innerHTML: 'Location'},
 			{update: async function(anime){
 				div.innerHTML = innerHTML.splice(0, innerHTML.length-2); 
 			}},
-			// .splice(0, innerHTML.length-2)
-			{translateX: -10},
-            {translateY: -23},
+            {translateY: -10},
         ],	
         delay: function(el, i) { return i * 300; },
         direction: 'normal',
-        loop: false,
+        loop: true,
         autoplay: false,
         easing: 'easeInOutSine',
         duration: 4000
@@ -144,10 +141,10 @@
 	width: 50%;
 	margin: auto;
 	text-align: center;
-padding-bottom: 1em;
-font-family: 'Courier New', Courier, monospace;
-font-weight: 700;
-background-color: #edebf5;
+	padding-bottom: 1em;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 700;
+	background-color: #edebf5;
 }
 .tooltip {
   position:relative; /* making the .tooltip span a container for the tooltip text */

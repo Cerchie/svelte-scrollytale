@@ -1,18 +1,20 @@
-<div class="gotodef-request-illustration-container">
-    <div class="gotodef-request-container">
-      <div class="gotodef-params" on:innerHTML|preventDefault>
-          {"{Document URI, position}"}  </div>   
+
+<div class="gotodef-container">
+      <div class="gotodef-params" on:innerHTML|preventDefault> {"{Document URI, position}"}  </div>   
       <div class="client-gotodef">client</div>
     <div class="server-gotodef">server</div>
     <button class="play-gotodef">Play</button>
-  </div>
 </div>
+
 
 
   <style>
 
 .client-gotodef {
-	padding-top: .5em;
+    margin-left: 6em;
+    right: 10em;
+    bottom: 4em;
+	padding: .5em;
 	background-color: #edebf5;
 	color: black;
 	border: 3px solid  black;
@@ -23,45 +25,46 @@
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.gotodef-container {
+ 
+	margin: auto;
+	padding: 2em;
+}
+
 .gotodef-params {
-		margin-bottom: -2em;
-		margin-left: 5em;
-	width:200px;
-	padding:10px;
+    margin-left: 10em;
+    margin-bottom: -1em;
+	width: fit-content;
+    padding: 1em;
 	border: 2px solid black;
 	border-radius:10px;
 	background:white;
 	color: black;
 	text-align:center;
-
 	border-radius: 10px;
 	font-family: 'Courier New', Courier, monospace;
 	font-weight: 700;
 	}
 
-.gotodef-request-container { 
-    padding: 0px;
-}
-
-.gotodef-request-illustration-container {
-		border: 2px solid black;
-		border-radius:10px;
-		margin: 2em;
-		padding: 1em;
-	}
 
 .play-gotodef {
+    margin-left: 6em;
+    top: 12em;
+    bottom: 1em;
     background-color: var(--category-cyan);
     border: 2px solid black;
-		border-radius:20px;
-		margin: .5em;
-		padding: 1em;
+	border-radius:20px;
+    padding: 10px;
+
     }
 
 .server-gotodef {
-	margin-top: 1em;
-	margin-left: 30em;
-	padding-top: .5em;
+    margin-left: 12em;
+    margin-top: 7em;
+    top: 10em;
+    bottom: 4em;
+    left: 20em;
+    right: 2em;
 	background-color: #fce8d7;
 	border: 3px solid  black;
 	width: 6em;
