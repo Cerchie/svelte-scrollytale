@@ -269,7 +269,7 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 
 }
 .play {
-	margin-right: 1em;
+	margin: .5em;
 	height: 2em;
     color: white; /* Background color */
     background-color: var(--color-purple); /* Text color */
@@ -286,7 +286,7 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 }
 
 .pause {
-	margin-left: 1em;
+	margin: .5em;
 	height: 2em;
     color: white; /* Background color */
     background-color: var(--color-purple); /* Text color */
