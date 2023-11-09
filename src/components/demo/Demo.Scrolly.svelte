@@ -269,7 +269,7 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 
 }
 .play {
-	margin: .5em;
+	margin: 2em;
 	height: 2em;
     color: white; /* Background color */
     background-color: var(--color-purple); /* Text color */
@@ -303,6 +303,8 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 }
 
 .img-container {
+	background-size: contain;
+	background-repeat: no-repeat;
 	align-content: center;
 
 }
@@ -321,7 +323,6 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 }
 
 .image.image-1 {
-	margin: auto;
     animation: fadeOut 3s ease-in-out forwards;
     animation-delay: 5s;
 	width: 70vw;
