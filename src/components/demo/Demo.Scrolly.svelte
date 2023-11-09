@@ -44,12 +44,7 @@
         loop: true,
         autoplay: true,
         easing: 'easeInSine',
-        duration: 4000,
-		update: async function(){
-				var obj = document.querySelector('.gotodef-params');
-				return obj.innerHTML = obj.innerHTML.slice(0, obj.innerHTML.length - 2);
-			
-		}
+        duration: 4000
 
 });
 
@@ -57,16 +52,31 @@ document.querySelector('.request-controls .play').onclick = animation.play;
 document.querySelector('.request-controls .pause').onclick = animation.pause;
 
 document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
-  })
 
+
+const observer = new IntersectionObserver(entries => {
+  // Loop over the entries
+  entries.forEach(entry => {
+    // If the element is visible
+    if (entry.isIntersecting) {
+      // Add the animation class
+      entry.target.classList.add('animation');
+    }
+  });
+});
+
+observer.observe(document.querySelector('.image.image-1'));
+
+});
 </script>
 
 <section id="scrolly" >
-
+	<hr>
 	<div class="spacer" />
 
 	<Scrolly bind:value>
 		<figure>
+			<p>PLACEHOLDER</p>
 			<div class="img-container">
 				<img class="image image-2" src='assets/demo/1stgraphwhitebg.svg' alt="imageofgraph" />
 			</div>	
@@ -75,7 +85,7 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 
 		<figure class='sticky'>
 			<div class="img-container-2">
-				<img class="image image-1" src="assets/demo/1stgraphwhitebg.svg" alt="1">
+				<img class="image image-1" src="assets/demo/2ndgraphwhitebg.svg" alt="1">
 	
 			</div>	
 
@@ -127,7 +137,11 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 </section>
 
 <style>
-
+hr {
+	width: 50vw;
+	margin:0 auto;
+	border: 1px solid purple;
+}
 .exit-btn {
 	border: 2px solid black;
 	height: 1.5em;
@@ -250,7 +264,7 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
 	background-color: white;
 	margin: .5em;
 	align-content: center;
-	border:dashed 4px var(--color-gray-200);
+	border:dashed 4px gainsboro;
 	border-top-left-radius: 255px 120px;
       border-top-right-radius: 120px 225px;
       border-bottom-right-radius: 225px 120px;
@@ -265,7 +279,7 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
   margin-left: -.5em;
   border-top: .75em solid transparent;
   border-bottom: .75em solid transparent;
-  border-left: 1.25em solid var(--color-purple);
+  border-left: 1.25em solid purple;
 
 }
 .play {
@@ -302,56 +316,47 @@ document.querySelector('.play-gotodef').onclick = animationGoToDefReq.play;
     border: 1px solid var(--color-purple);
 }
 
-.img-container {
-	background-size: contain;
-	background-repeat: no-repeat;
-	align-content: center;
-
-}
-
 .img-container-2 {
-	background-image: url('assets/demo/2ndgraphwhitebg.svg');
-	background-size: contain;
-	background-repeat: no-repeat;
 	align-content: center;
 
 }
 
 .image.image-2 {
 	margin: auto;
-	width: 70vw;
+	width: 80vw;
 }
 
 .image.image-1 {
-    animation: fadeOut 3s ease-in-out forwards;
-    animation-delay: 5s;
-	width: 70vw;
-
+	margin: auto;
+	width: 80vw;
 }
 
-	.spacer {
-		height: 25vh;
-	}
 
-	.step {
-		height: 80vh;
-		width: 100vw;
-		background: var(--color-white);
-		text-align: center;
+
+.spacer {
+	margin-top: 4em;
+	height: 25vh;
+}
+
+.step {
+	height: 80vh;
+	width: 100vw;
+	background: var(--color-white);
+	text-align: center;
 		
-	}
+}
 
-	.step div {
-		padding: 1em;
-	}
+.step div {
+	padding: 1em;
+}
 
-	@keyframes fadeIn {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
-	}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
 
-	@keyframes fadeOut {
-	0% { opacity: 1; }
-	100% { opacity: 0; }
-	}
+@keyframes fadeOut {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
 </style>
